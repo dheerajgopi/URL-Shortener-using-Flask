@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+  <form action="{{url_for('shorten_url')}}" method="POST" class="url">
+    <p><input name="url_input" type="url" value="{{request.form.url_input}}"</p>
+    <p><input type="submit" value="shorten!"></p>
+  </form>
+    {% if short_url %}
+      <input name="shorturl" type="text" value="{{ short_url }}">
+    {% endif %}
+{% endblock %}
